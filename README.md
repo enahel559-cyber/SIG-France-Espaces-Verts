@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌳 Analyse et cartographie des espaces verts à Paris
 
 ## Présentation
@@ -34,3 +35,7 @@ Installer les bibliothèques :
 
 ```bash
 python -m pip install pandas geopandas folium
+=======
+# SIG-France-Espaces-Verts
+projet SIG France avec PYTHON  PANDAS GEOPANDAS ET FOLIUM 
+>>>>>>> 5b517185fa6f508dd358a72843dd51b4f7e89b8b
