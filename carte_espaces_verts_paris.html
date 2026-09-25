@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5c030670c538e2317afcb72f05844bec {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+">
+
+<h3 style="margin:0;">
+🌳 Espaces verts à Paris
+</h3>
+
+<p style="margin:5px 0 0 0;">
+<b>10</b> espaces verts représentés
+</p>
+
+</div>
+    
+<div style="
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 220px;
+    background-color: white;
+    border: 2px solid grey;
+    z-index: 9999;
+    padding: 12px;
+    border-radius: 8px;
+">
+
+<h4>📊 Statistiques</h4>
+
+<p>
+<b>Total :</b> 10
+</p>
+
+<ul>
+
+    <li><b>Parc</b> : 5</li>
+    
+    <li><b>Jardin</b> : 2</li>
+    
+    <li><b>Bois</b> : 2</li>
+    
+    <li><b>Espace vert</b> : 1</li>
+    
+</ul>
+
+</div>
+    
+            <div class="folium-map" id="map_5c030670c538e2317afcb72f05844bec" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5c030670c538e2317afcb72f05844bec = L.map(
+                "map_5c030670c538e2317afcb72f05844bec",
+                {
+                    center: [48.8566, 2.3522],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_292947731810cf1ad1413b2990826ba0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_292947731810cf1ad1413b2990826ba0.addTo(map_5c030670c538e2317afcb72f05844bec);
+        
+    
+            var marker_cluster_74605efaa8f3927078dd3f94daca1bd2 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_14a04ba476d514b12090de9994e3e810 = L.marker(
+                [48.8462, 2.3372],
+                {
+}
+            ).addTo(feature_group_0e0528f6c2aae9544afdd8843d8699d9);
+        
+    
+            var icon_02b02cd5a8c17dfcc101e5a8cab6b732 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3bb2d8c6fb9e2caf96e090e928bbb511 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_416117292b65d29e23433a17533faca0 = $(`<div id="html_416117292b65d29e23433a17533faca0" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Jardin du Luxembourg</h4>         <b>Type :</b> Jardin<br>         <b>Latitude :</b> 48.8462<br>         <b>Longitude :</b> 2.3372     </div>     </div>`)[0];
+                popup_3bb2d8c6fb9e2caf96e090e928bbb511.setContent(html_416117292b65d29e23433a17533faca0);
+            
+        
+
+        marker_14a04ba476d514b12090de9994e3e810.bindPopup(popup_3bb2d8c6fb9e2caf96e090e928bbb511)
+        ;
+
+        
+    
+    
+            marker_14a04ba476d514b12090de9994e3e810.bindTooltip(
+                `<div>
+                     Jardin du Luxembourg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_14a04ba476d514b12090de9994e3e810.setIcon(icon_02b02cd5a8c17dfcc101e5a8cab6b732);
+            
+    
+            var marker_c93b1c2bdc91993b9f2b9bcdfa846b19 = L.marker(
+                [48.8809, 2.3828],
+                {
+}
+            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+        
+    
+            var icon_ed8e38edf018e9c0bc78e7c7148d21ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3e32df42f0d9ac327c81facb641d6d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1bb18bee6833e2249dce9c89bfc33d4 = $(`<div id="html_b1bb18bee6833e2249dce9c89bfc33d4" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc des Buttes-Chaumont</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8809<br>         <b>Longitude :</b> 2.3828     </div>     </div>`)[0];
+                popup_a3e32df42f0d9ac327c81facb641d6d3.setContent(html_b1bb18bee6833e2249dce9c89bfc33d4);
+            
+        
+
+        marker_c93b1c2bdc91993b9f2b9bcdfa846b19.bindPopup(popup_a3e32df42f0d9ac327c81facb641d6d3)
+        ;
+
+        
+    
+    
+            marker_c93b1c2bdc91993b9f2b9bcdfa846b19.bindTooltip(
+                `<div>
+                     Parc des Buttes-Chaumont
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c93b1c2bdc91993b9f2b9bcdfa846b19.setIcon(icon_ed8e38edf018e9c0bc78e7c7148d21ed);
+            
+    
+            var marker_ed15fc91ba371f8ce453099e100d53d6 = L.marker(
+                [48.8634, 2.3275],
+                {
+}
+            ).addTo(feature_group_0e0528f6c2aae9544afdd8843d8699d9);
+        
+    
+            var icon_9283677f2a3931da64e978c2111fb68a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f296a6e2fabb4a9f71a63a467dfd96de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_945d3a6f07bbb5d91221c9e224ba057b = $(`<div id="html_945d3a6f07bbb5d91221c9e224ba057b" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Jardin des Tuileries</h4>         <b>Type :</b> Jardin<br>         <b>Latitude :</b> 48.8634<br>         <b>Longitude :</b> 2.3275     </div>     </div>`)[0];
+                popup_f296a6e2fabb4a9f71a63a467dfd96de.setContent(html_945d3a6f07bbb5d91221c9e224ba057b);
+            
+        
+
+        marker_ed15fc91ba371f8ce453099e100d53d6.bindPopup(popup_f296a6e2fabb4a9f71a63a467dfd96de)
+        ;
+
+        
+    
+    
+            marker_ed15fc91ba371f8ce453099e100d53d6.bindTooltip(
+                `<div>
+                     Jardin des Tuileries
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed15fc91ba371f8ce453099e100d53d6.setIcon(icon_9283677f2a3931da64e978c2111fb68a);
+            
+    
+            var marker_31ace58e7dbd6d21c3f202a200ec6616 = L.marker(
+                [48.8556, 2.2986],
+                {
+}
+            ).addTo(feature_group_a19a870f745a50c55a2006aa6f8c3f0c);
+        
+    
+            var icon_833db752fb34c0facc5b0b6e6250f59c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00e46967bdb46b5c2c6053517acd5771 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cbcbf0882d2412706d7f48e42cdb57b3 = $(`<div id="html_cbcbf0882d2412706d7f48e42cdb57b3" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Champ de Mars</h4>         <b>Type :</b> Espace vert<br>         <b>Latitude :</b> 48.8556<br>         <b>Longitude :</b> 2.2986     </div>     </div>`)[0];
+                popup_00e46967bdb46b5c2c6053517acd5771.setContent(html_cbcbf0882d2412706d7f48e42cdb57b3);
+            
+        
+
+        marker_31ace58e7dbd6d21c3f202a200ec6616.bindPopup(popup_00e46967bdb46b5c2c6053517acd5771)
+        ;
+
+        
+    
+    
+            marker_31ace58e7dbd6d21c3f202a200ec6616.bindTooltip(
+                `<div>
+                     Champ de Mars
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31ace58e7dbd6d21c3f202a200ec6616.setIcon(icon_833db752fb34c0facc5b0b6e6250f59c);
+            
+    
+            var marker_1796b0e99034a89c3e5f7caf8ef193bb = L.marker(
+                [48.8799, 2.3098],
+                {
+}
+            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+        
+    
+            var icon_7f888edebce37b1de819b79f85a91803 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_992c656f857d52b6bbb4ef9d0d82a1f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8821075e2c14ee3fa5cbc55a2353eedb = $(`<div id="html_8821075e2c14ee3fa5cbc55a2353eedb" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc Monceau</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8799<br>         <b>Longitude :</b> 2.3098     </div>     </div>`)[0];
+                popup_992c656f857d52b6bbb4ef9d0d82a1f0.setContent(html_8821075e2c14ee3fa5cbc55a2353eedb);
+            
+        
+
+        marker_1796b0e99034a89c3e5f7caf8ef193bb.bindPopup(popup_992c656f857d52b6bbb4ef9d0d82a1f0)
+        ;
+
+        
+    
+    
+            marker_1796b0e99034a89c3e5f7caf8ef193bb.bindTooltip(
+                `<div>
+                     Parc Monceau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1796b0e99034a89c3e5f7caf8ef193bb.setIcon(icon_7f888edebce37b1de819b79f85a91803);
+            
+    
+            var marker_1e74bb0cff45ef140f195ebc74314534 = L.marker(
+                [48.8331, 2.433],
+                {
+}
+            ).addTo(feature_group_d28c4d368f9ec5d91271aa182aae641a);
+        
+    
+            var icon_2e84993c35b454d3cd6dfdfd16237d65 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b17f2d3c60c7e780a307f91ca4cbd344 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b7571f5d9271f69fc19f0fffac6589c = $(`<div id="html_7b7571f5d9271f69fc19f0fffac6589c" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Bois de Vincennes</h4>         <b>Type :</b> Bois<br>         <b>Latitude :</b> 48.8331<br>         <b>Longitude :</b> 2.433     </div>     </div>`)[0];
+                popup_b17f2d3c60c7e780a307f91ca4cbd344.setContent(html_7b7571f5d9271f69fc19f0fffac6589c);
+            
+        
+
+        marker_1e74bb0cff45ef140f195ebc74314534.bindPopup(popup_b17f2d3c60c7e780a307f91ca4cbd344)
+        ;
+
+        
+    
+    
+            marker_1e74bb0cff45ef140f195ebc74314534.bindTooltip(
+                `<div>
+                     Bois de Vincennes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e74bb0cff45ef140f195ebc74314534.setIcon(icon_2e84993c35b454d3cd6dfdfd16237d65);
+            
+    
+            var marker_034923ddddae211d215dc41459bc701f = L.marker(
+                [48.8637, 2.253],
+                {
+}
+            ).addTo(feature_group_d28c4d368f9ec5d91271aa182aae641a);
+        
+    
+            var icon_257b7263af4b843ddd61916ecb76fc82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f14cc04c8759b6f54697c1639c4a3b01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70d2736305fc41163c91ca3cfcfbe0b3 = $(`<div id="html_70d2736305fc41163c91ca3cfcfbe0b3" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Bois de Boulogne</h4>         <b>Type :</b> Bois<br>         <b>Latitude :</b> 48.8637<br>         <b>Longitude :</b> 2.253     </div>     </div>`)[0];
+                popup_f14cc04c8759b6f54697c1639c4a3b01.setContent(html_70d2736305fc41163c91ca3cfcfbe0b3);
+            
+        
+
+        marker_034923ddddae211d215dc41459bc701f.bindPopup(popup_f14cc04c8759b6f54697c1639c4a3b01)
+        ;
+
+        
+    
+    
+            marker_034923ddddae211d215dc41459bc701f.bindTooltip(
+                `<div>
+                     Bois de Boulogne
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_034923ddddae211d215dc41459bc701f.setIcon(icon_257b7263af4b843ddd61916ecb76fc82);
+            
+    
+            var marker_f606c3c883b55112ae521ca01233d027 = L.marker(
+                [48.8937, 2.3937],
+                {
+}
+            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+        
+    
+            var icon_25ea0ec91fa6d2b20cf097bf752aa9e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e47f511b5ee2ff5d481a63b1b5ed4018 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2296bd95662044778bda54fae8f34600 = $(`<div id="html_2296bd95662044778bda54fae8f34600" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc de la Villette</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8937<br>         <b>Longitude :</b> 2.3937     </div>     </div>`)[0];
+                popup_e47f511b5ee2ff5d481a63b1b5ed4018.setContent(html_2296bd95662044778bda54fae8f34600);
+            
+        
+
+        marker_f606c3c883b55112ae521ca01233d027.bindPopup(popup_e47f511b5ee2ff5d481a63b1b5ed4018)
+        ;
+
+        
+    
+    
+            marker_f606c3c883b55112ae521ca01233d027.bindTooltip(
+                `<div>
+                     Parc de la Villette
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f606c3c883b55112ae521ca01233d027.setIcon(icon_25ea0ec91fa6d2b20cf097bf752aa9e7);
+            
+    
+            var marker_72b5023b20ea37b49b9824f5a5ad8560 = L.marker(
+                [48.8214, 2.3389],
+                {
+}
+            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+        
+    
+            var icon_788f6753ca7e0ee37df0d322ea401a69 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb7eee87942217acf7b3c695f4c5d8b0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_15087f9e577b47a33e2a5e20fc9cb423 = $(`<div id="html_15087f9e577b47a33e2a5e20fc9cb423" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc Montsouris</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8214<br>         <b>Longitude :</b> 2.3389     </div>     </div>`)[0];
+                popup_fb7eee87942217acf7b3c695f4c5d8b0.setContent(html_15087f9e577b47a33e2a5e20fc9cb423);
+            
+        
+
+        marker_72b5023b20ea37b49b9824f5a5ad8560.bindPopup(popup_fb7eee87942217acf7b3c695f4c5d8b0)
+        ;
+
+        
+    
+    
+            marker_72b5023b20ea37b49b9824f5a5ad8560.bindTooltip(
+                `<div>
+                     Parc Montsouris
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_72b5023b20ea37b49b9824f5a5ad8560.setIcon(icon_788f6753ca7e0ee37df0d322ea401a69);
+            
+    
+            var marker_3c61d892365077595604dde5173b5f15 = L.marker(
+                [48.8414, 2.2759],
+                {
+}
+            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+        
+    
+            var icon_f4eb075f197be9b943aa3b340c98c0dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_136bbc958d5252a9c4cf7bf396f5c1d6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc19cb8c7e3ea7dde4560f2dee69f5ad = $(`<div id="html_cc19cb8c7e3ea7dde4560f2dee69f5ad" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc André-Citroën</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8414<br>         <b>Longitude :</b> 2.2759     </div>     </div>`)[0];
+                popup_136bbc958d5252a9c4cf7bf396f5c1d6.setContent(html_cc19cb8c7e3ea7dde4560f2dee69f5ad);
+            
+        
+
+        marker_3c61d892365077595604dde5173b5f15.bindPopup(popup_136bbc958d5252a9c4cf7bf396f5c1d6)
+        ;
+
+        
+    
+    
+            marker_3c61d892365077595604dde5173b5f15.bindTooltip(
+                `<div>
+                     Parc André-Citroën
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3c61d892365077595604dde5173b5f15.setIcon(icon_f4eb075f197be9b943aa3b340c98c0dd);
+            
+    
+            marker_cluster_74605efaa8f3927078dd3f94daca1bd2.addTo(map_5c030670c538e2317afcb72f05844bec);
+        
+    
+            var feature_group_3487881207179927f740b9f9758ca9ea = L.featureGroup(
+                {
+}
+            );
+        
+    
+                marker_c93b1c2bdc91993b9f2b9bcdfa846b19.setIcon(icon_ed8e38edf018e9c0bc78e7c7148d21ed);
+            
+    
+                marker_1796b0e99034a89c3e5f7caf8ef193bb.setIcon(icon_7f888edebce37b1de819b79f85a91803);
+            
+    
+                marker_f606c3c883b55112ae521ca01233d027.setIcon(icon_25ea0ec91fa6d2b20cf097bf752aa9e7);
+            
+    
+                marker_72b5023b20ea37b49b9824f5a5ad8560.setIcon(icon_788f6753ca7e0ee37df0d322ea401a69);
+            
+    
+                marker_3c61d892365077595604dde5173b5f15.setIcon(icon_f4eb075f197be9b943aa3b340c98c0dd);
+            
+    
+            feature_group_3487881207179927f740b9f9758ca9ea.addTo(map_5c030670c538e2317afcb72f05844bec);
+        
+    
+            var feature_group_0e0528f6c2aae9544afdd8843d8699d9 = L.featureGroup(
+                {
+}
+            );
+        
+    
+                marker_14a04ba476d514b12090de9994e3e810.setIcon(icon_02b02cd5a8c17dfcc101e5a8cab6b732);
+            
+    
+                marker_ed15fc91ba371f8ce453099e100d53d6.setIcon(icon_9283677f2a3931da64e978c2111fb68a);
+            
+    
+            feature_group_0e0528f6c2aae9544afdd8843d8699d9.addTo(map_5c030670c538e2317afcb72f05844bec);
+        
+    
+            var feature_group_d28c4d368f9ec5d91271aa182aae641a = L.featureGroup(
+                {
+}
+            );
+        
+    
+                marker_1e74bb0cff45ef140f195ebc74314534.setIcon(icon_2e84993c35b454d3cd6dfdfd16237d65);
+            
+    
+                marker_034923ddddae211d215dc41459bc701f.setIcon(icon_257b7263af4b843ddd61916ecb76fc82);
+            
+    
+            feature_group_d28c4d368f9ec5d91271aa182aae641a.addTo(map_5c030670c538e2317afcb72f05844bec);
+        
+    
+            var feature_group_a19a870f745a50c55a2006aa6f8c3f0c = L.featureGroup(
+                {
+}
+            );
+        
+    
+                marker_31ace58e7dbd6d21c3f202a200ec6616.setIcon(icon_833db752fb34c0facc5b0b6e6250f59c);
+            
+    
+            feature_group_a19a870f745a50c55a2006aa6f8c3f0c.addTo(map_5c030670c538e2317afcb72f05844bec);
+        
+    
+            var marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl = new L.Control.Search({
+                layer: marker_cluster_74605efaa8f3927078dd3f94daca1bd2,
+                
+                propertyName: 'nom',
+                
+                collapsed: false,
+                textPlaceholder: '🔎 Rechercher un espace vert...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl.on('search:locationfound', function(e) {
+                    marker_cluster_74605efaa8f3927078dd3f94daca1bd2.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl.on('search:collapsed', function(e) {
+                        marker_cluster_74605efaa8f3927078dd3f94daca1bd2.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_5c030670c538e2317afcb72f05844bec.addControl( marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl );
+
+        
+    
+            var layer_control_9107eb745a1313c34f97961323efce03_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_292947731810cf1ad1413b2990826ba0,
+                },
+                overlays :  {
+                    "macro_element_74605efaa8f3927078dd3f94daca1bd2" : marker_cluster_74605efaa8f3927078dd3f94daca1bd2,
+                    "\ud83c\udf33 Parcs" : feature_group_3487881207179927f740b9f9758ca9ea,
+                    "\ud83c\udf37 Jardins" : feature_group_0e0528f6c2aae9544afdd8843d8699d9,
+                    "\ud83c\udf32 Bois" : feature_group_d28c4d368f9ec5d91271aa182aae641a,
+                    "\ud83c\udf3f Autres espaces verts" : feature_group_a19a870f745a50c55a2006aa6f8c3f0c,
+                },
+            };
+            let layer_control_9107eb745a1313c34f97961323efce03 = L.control.layers(
+                layer_control_9107eb745a1313c34f97961323efce03_layers.base_layers,
+                layer_control_9107eb745a1313c34f97961323efce03_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_5c030670c538e2317afcb72f05844bec);
+
+        
+</script>
+</html>
