@@ -1,10 +1,11 @@
 import pandas as pd
 import geopandas as gpd
 import folium
-from folium.plugins import MarkerCluster, Search
+from folium.plugins import MarkerCluster
+
 
 # ============================================================
-# 1. DONNÉES
+# 1. DONNEES
 # ============================================================
 
 donnees = pd.DataFrame({
@@ -63,15 +64,16 @@ donnees = pd.DataFrame({
 
 
 # ============================================================
-# 2. ANALYSE AVEC PANDAS
+# 2. ANALYSE DES DONNEES
 # ============================================================
 
 nombre_total = len(donnees)
+
 nombre_par_type = donnees["type"].value_counts()
 
 
 # ============================================================
-# 3. TRANSFORMATION EN DONNÉES GÉOGRAPHIQUES
+# 3. GEODATAFRAME
 # ============================================================
 
 gdf = gpd.GeoDataFrame(
@@ -85,58 +87,79 @@ gdf = gpd.GeoDataFrame(
 
 
 # ============================================================
-# 4. CRÉATION DE LA CARTE
+# 4. CARTE
 # ============================================================
 
 carte = folium.Map(
     location=[48.8566, 2.3522],
     zoom_start=12,
-    tiles="CartoDB Positron"
-    )
+    tiles="OpenStreetMap"
+)
 
 
 # ============================================================
-# 5. GROUPES PAR CATÉGORIE
+# 5. GROUPES
 # ============================================================
 
-parcs = folium.FeatureGroup(name="🌳 Parcs")
-jardins = folium.FeatureGroup(name="🌷 Jardins")
-bois = folium.FeatureGroup(name="🌲 Bois")
-autres = folium.FeatureGroup(name="🌿 Autres espaces verts")
+parcs = folium.FeatureGroup(
+    name="🌳 Parcs"
+)
+
+jardins = folium.FeatureGroup(
+    name="🌷 Jardins"
+)
+
+bois = folium.FeatureGroup(
+    name="🌲 Bois"
+)
+
+autres = folium.FeatureGroup(
+    name="🌿 Autres espaces verts"
+)
 
 
 # ============================================================
-# 6. MARQUEURS
+# 6. CLUSTER
 # ============================================================
 
-cluster = MarkerCluster().add_to(carte)
+cluster = MarkerCluster(
+    name="📍 Espaces verts"
+).add_to(carte)
+
+
+# ============================================================
+# 7. AJOUT DES MARQUEURS
+# ============================================================
 
 for _, lieu in gdf.iterrows():
 
     if lieu["type"] == "Parc":
         couleur = "green"
-        groupe = parcs
 
     elif lieu["type"] == "Jardin":
         couleur = "blue"
-        groupe = jardins
 
     elif lieu["type"] == "Bois":
         couleur = "darkgreen"
-        groupe = bois
 
     else:
         couleur = "purple"
-        groupe = autres
+
 
     popup = f"""
-    <div style="width:220px">
+    <div style="width:230px">
+
         <h4>{lieu["nom"]}</h4>
-        <b>Type :</b> {lieu["type"]}<br>
+
+        <b>Type :</b> {lieu["type"]}<br><br>
+
         <b>Latitude :</b> {lieu["latitude"]}<br>
+
         <b>Longitude :</b> {lieu["longitude"]}
+
     </div>
     """
+
 
     marqueur = folium.Marker(
         location=[
@@ -158,12 +181,13 @@ for _, lieu in gdf.iterrows():
         )
     )
 
+
+    # Le marqueur est ajouté au cluster
     marqueur.add_to(cluster)
-    marqueur.add_to(groupe)
 
 
 # ============================================================
-# 7. AJOUT DES GROUPES À LA CARTE
+# 8. AJOUT DES GROUPES
 # ============================================================
 
 parcs.add_to(carte)
@@ -173,38 +197,14 @@ autres.add_to(carte)
 
 
 # ============================================================
-# 8. RECHERCHE
-# ============================================================
-
-Search(
-    layer=cluster,
-    search_label="nom",
-    placeholder="🔎 Rechercher un espace vert...",
-    collapsed=False
-).add_to(carte)
-
-
-# ============================================================
-# 9. CONTRÔLE DES COUCHES
+# 9. CONTROLE DES COUCHES
 # ============================================================
 
 folium.LayerControl().add_to(carte)
 
 
 # ============================================================
-# 10. STATISTIQUES
-# ============================================================
-
-statistiques = ""
-
-for type_espace, nombre in nombre_par_type.items():
-    statistiques += f"""
-    <li><b>{type_espace}</b> : {nombre}</li>
-    """
-
-
-# ============================================================
-# 11. TITRE ET INFORMATIONS
+# 10. TITRE
 # ============================================================
 
 titre = f"""
@@ -220,17 +220,17 @@ titre = f"""
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 ">
 
-<h3 style="margin:0;">
-🌳 Espaces verts à Paris
-</h3>
+    <h3 style="margin:0;">
+        🌳 Espaces verts à Paris
+    </h3>
 
-<p style="margin:5px 0 0 0;">
-<b>{nombre_total}</b> espaces verts représentés
-</p>
+    <p style="margin:5px 0 0 0;">
+        <b>{nombre_total}</b>
+        espaces verts représentés
+    </p>
 
 </div>
 """
-
 
 carte.get_root().html.add_child(
     folium.Element(titre)
@@ -238,8 +238,19 @@ carte.get_root().html.add_child(
 
 
 # ============================================================
-# 12. PANNEAU DES STATISTIQUES
+# 11. STATISTIQUES
 # ============================================================
+
+statistiques = ""
+
+for type_espace, nombre in nombre_par_type.items():
+
+    statistiques += f"""
+    <li>
+        <b>{type_espace}</b> : {nombre}
+    </li>
+    """
+
 
 legende = f"""
 <div style="
@@ -254,15 +265,15 @@ legende = f"""
     border-radius: 8px;
 ">
 
-<h4>📊 Statistiques</h4>
+    <h4>📊 Statistiques</h4>
 
-<p>
-<b>Total :</b> {nombre_total}
-</p>
+    <p>
+        <b>Total :</b> {nombre_total}
+    </p>
 
-<ul>
-{statistiques}
-</ul>
+    <ul>
+        {statistiques}
+    </ul>
 
 </div>
 """
@@ -273,25 +284,28 @@ carte.get_root().html.add_child(
 
 
 # ============================================================
-# 13. SAUVEGARDE
+# 12. SAUVEGARDE
 # ============================================================
 
-carte.save(
-    "carte_espaces_verts_paris.html"
-)
+nom_fichier = "carte_espaces_verts_paris.html"
+
+carte.save(nom_fichier)
 
 
 # ============================================================
-# 14. MESSAGE
+# 13. RESULTAT
 # ============================================================
 
 print("======================================")
-print("     PROJET SIG - PARIS")
+print("       PROJET SIG - PARIS")
 print("======================================")
+
 print(f"Nombre total : {nombre_total}")
+
 print("\nRépartition :")
 
 for type_espace, nombre in nombre_par_type.items():
     print(f"- {type_espace} : {nombre}")
 
 print("\nCarte créée avec succès !")
+print(f"Fichier : {nom_fichier}")
