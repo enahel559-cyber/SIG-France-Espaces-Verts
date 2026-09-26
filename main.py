@@ -91,8 +91,8 @@ gdf = gpd.GeoDataFrame(
 carte = folium.Map(
     location=[48.8566, 2.3522],
     zoom_start=12,
-    tiles="OpenStreetMap"
-)
+    tiles="CartoDB Positron"
+    )
 
 
 # ============================================================
