@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_5c030670c538e2317afcb72f05844bec {
+                #map_f483799c4d6decc9d1b053a23d42e3f7 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -53,8 +53,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
 </head>
 <body>
     
@@ -71,13 +69,14 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 ">
 
-<h3 style="margin:0;">
-🌳 Espaces verts à Paris
-</h3>
+    <h3 style="margin:0;">
+        🌳 Espaces verts à Paris
+    </h3>
 
-<p style="margin:5px 0 0 0;">
-<b>10</b> espaces verts représentés
-</p>
+    <p style="margin:5px 0 0 0;">
+        <b>10</b>
+        espaces verts représentés
+    </p>
 
 </div>
     
@@ -93,34 +92,42 @@
     border-radius: 8px;
 ">
 
-<h4>📊 Statistiques</h4>
+    <h4>📊 Statistiques</h4>
 
-<p>
-<b>Total :</b> 10
-</p>
+    <p>
+        <b>Total :</b> 10
+    </p>
 
-<ul>
-
-    <li><b>Parc</b> : 5</li>
+    <ul>
+        
+    <li>
+        <b>Parc</b> : 5
+    </li>
     
-    <li><b>Jardin</b> : 2</li>
+    <li>
+        <b>Jardin</b> : 2
+    </li>
     
-    <li><b>Bois</b> : 2</li>
+    <li>
+        <b>Bois</b> : 2
+    </li>
     
-    <li><b>Espace vert</b> : 1</li>
+    <li>
+        <b>Espace vert</b> : 1
+    </li>
     
-</ul>
+    </ul>
 
 </div>
     
-            <div class="folium-map" id="map_5c030670c538e2317afcb72f05844bec" ></div>
+            <div class="folium-map" id="map_f483799c4d6decc9d1b053a23d42e3f7" ></div>
         
 </body>
 <script>
     
     
-            var map_5c030670c538e2317afcb72f05844bec = L.map(
-                "map_5c030670c538e2317afcb72f05844bec",
+            var map_f483799c4d6decc9d1b053a23d42e3f7 = L.map(
+                "map_f483799c4d6decc9d1b053a23d42e3f7",
                 {
                     center: [48.8566, 2.3522],
                     crs: L.CRS.EPSG3857,
@@ -137,7 +144,7 @@
 
         
     
-            var tile_layer_292947731810cf1ad1413b2990826ba0 = L.tileLayer(
+            var tile_layer_0f6ffbf7d84067dad2f0dcec50a9b197 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -154,23 +161,23 @@
             );
         
     
-            tile_layer_292947731810cf1ad1413b2990826ba0.addTo(map_5c030670c538e2317afcb72f05844bec);
+            tile_layer_0f6ffbf7d84067dad2f0dcec50a9b197.addTo(map_f483799c4d6decc9d1b053a23d42e3f7);
         
     
-            var marker_cluster_74605efaa8f3927078dd3f94daca1bd2 = L.markerClusterGroup(
+            var marker_cluster_ef002cc352bd664a3aadad29ace0632a = L.markerClusterGroup(
                 {
 }
             );
         
     
-            var marker_14a04ba476d514b12090de9994e3e810 = L.marker(
+            var marker_f23d90af91c6355af469df8cc9e6f62c = L.marker(
                 [48.8462, 2.3372],
                 {
 }
-            ).addTo(feature_group_0e0528f6c2aae9544afdd8843d8699d9);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_02b02cd5a8c17dfcc101e5a8cab6b732 = L.AwesomeMarkers.icon(
+            var icon_120f4d0e6c82adce6092171f276ec594 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -181,24 +188,24 @@
             );
         
     
-        var popup_3bb2d8c6fb9e2caf96e090e928bbb511 = L.popup({
+        var popup_c79872ba4321893d9b9e583cfb613c1e = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_416117292b65d29e23433a17533faca0 = $(`<div id="html_416117292b65d29e23433a17533faca0" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Jardin du Luxembourg</h4>         <b>Type :</b> Jardin<br>         <b>Latitude :</b> 48.8462<br>         <b>Longitude :</b> 2.3372     </div>     </div>`)[0];
-                popup_3bb2d8c6fb9e2caf96e090e928bbb511.setContent(html_416117292b65d29e23433a17533faca0);
+                var html_4b0e7636a0c3b27a9f55e64024fd81ed = $(`<div id="html_4b0e7636a0c3b27a9f55e64024fd81ed" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Jardin du Luxembourg</h4>          <b>Type :</b> Jardin<br><br>          <b>Latitude :</b> 48.8462<br>          <b>Longitude :</b> 2.3372      </div>     </div>`)[0];
+                popup_c79872ba4321893d9b9e583cfb613c1e.setContent(html_4b0e7636a0c3b27a9f55e64024fd81ed);
             
         
 
-        marker_14a04ba476d514b12090de9994e3e810.bindPopup(popup_3bb2d8c6fb9e2caf96e090e928bbb511)
+        marker_f23d90af91c6355af469df8cc9e6f62c.bindPopup(popup_c79872ba4321893d9b9e583cfb613c1e)
         ;
 
         
     
     
-            marker_14a04ba476d514b12090de9994e3e810.bindTooltip(
+            marker_f23d90af91c6355af469df8cc9e6f62c.bindTooltip(
                 `<div>
                      Jardin du Luxembourg
                  </div>`,
@@ -208,17 +215,17 @@
             );
         
     
-                marker_14a04ba476d514b12090de9994e3e810.setIcon(icon_02b02cd5a8c17dfcc101e5a8cab6b732);
+                marker_f23d90af91c6355af469df8cc9e6f62c.setIcon(icon_120f4d0e6c82adce6092171f276ec594);
             
     
-            var marker_c93b1c2bdc91993b9f2b9bcdfa846b19 = L.marker(
+            var marker_fd19e1969e27fba1e138d67d315ba79e = L.marker(
                 [48.8809, 2.3828],
                 {
 }
-            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_ed8e38edf018e9c0bc78e7c7148d21ed = L.AwesomeMarkers.icon(
+            var icon_edb55e55b12092fe2ea0fa64df8df4b0 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
@@ -229,24 +236,24 @@
             );
         
     
-        var popup_a3e32df42f0d9ac327c81facb641d6d3 = L.popup({
+        var popup_987901ef7393939dc1b069f8eec304d2 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_b1bb18bee6833e2249dce9c89bfc33d4 = $(`<div id="html_b1bb18bee6833e2249dce9c89bfc33d4" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc des Buttes-Chaumont</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8809<br>         <b>Longitude :</b> 2.3828     </div>     </div>`)[0];
-                popup_a3e32df42f0d9ac327c81facb641d6d3.setContent(html_b1bb18bee6833e2249dce9c89bfc33d4);
+                var html_c6793885e748ce550e3723e94eda8203 = $(`<div id="html_c6793885e748ce550e3723e94eda8203" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Parc des Buttes-Chaumont</h4>          <b>Type :</b> Parc<br><br>          <b>Latitude :</b> 48.8809<br>          <b>Longitude :</b> 2.3828      </div>     </div>`)[0];
+                popup_987901ef7393939dc1b069f8eec304d2.setContent(html_c6793885e748ce550e3723e94eda8203);
             
         
 
-        marker_c93b1c2bdc91993b9f2b9bcdfa846b19.bindPopup(popup_a3e32df42f0d9ac327c81facb641d6d3)
+        marker_fd19e1969e27fba1e138d67d315ba79e.bindPopup(popup_987901ef7393939dc1b069f8eec304d2)
         ;
 
         
     
     
-            marker_c93b1c2bdc91993b9f2b9bcdfa846b19.bindTooltip(
+            marker_fd19e1969e27fba1e138d67d315ba79e.bindTooltip(
                 `<div>
                      Parc des Buttes-Chaumont
                  </div>`,
@@ -256,17 +263,17 @@
             );
         
     
-                marker_c93b1c2bdc91993b9f2b9bcdfa846b19.setIcon(icon_ed8e38edf018e9c0bc78e7c7148d21ed);
+                marker_fd19e1969e27fba1e138d67d315ba79e.setIcon(icon_edb55e55b12092fe2ea0fa64df8df4b0);
             
     
-            var marker_ed15fc91ba371f8ce453099e100d53d6 = L.marker(
+            var marker_893bb50c95d5481b04be00c55943cc85 = L.marker(
                 [48.8634, 2.3275],
                 {
 }
-            ).addTo(feature_group_0e0528f6c2aae9544afdd8843d8699d9);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_9283677f2a3931da64e978c2111fb68a = L.AwesomeMarkers.icon(
+            var icon_0958d3192b5bf1175568097ff6bb2dfe = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -277,24 +284,24 @@
             );
         
     
-        var popup_f296a6e2fabb4a9f71a63a467dfd96de = L.popup({
+        var popup_e533c7c10f85999e4f52529ddd02260a = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_945d3a6f07bbb5d91221c9e224ba057b = $(`<div id="html_945d3a6f07bbb5d91221c9e224ba057b" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Jardin des Tuileries</h4>         <b>Type :</b> Jardin<br>         <b>Latitude :</b> 48.8634<br>         <b>Longitude :</b> 2.3275     </div>     </div>`)[0];
-                popup_f296a6e2fabb4a9f71a63a467dfd96de.setContent(html_945d3a6f07bbb5d91221c9e224ba057b);
+                var html_5b33d252ee0ff72260bfef3e8173e308 = $(`<div id="html_5b33d252ee0ff72260bfef3e8173e308" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Jardin des Tuileries</h4>          <b>Type :</b> Jardin<br><br>          <b>Latitude :</b> 48.8634<br>          <b>Longitude :</b> 2.3275      </div>     </div>`)[0];
+                popup_e533c7c10f85999e4f52529ddd02260a.setContent(html_5b33d252ee0ff72260bfef3e8173e308);
             
         
 
-        marker_ed15fc91ba371f8ce453099e100d53d6.bindPopup(popup_f296a6e2fabb4a9f71a63a467dfd96de)
+        marker_893bb50c95d5481b04be00c55943cc85.bindPopup(popup_e533c7c10f85999e4f52529ddd02260a)
         ;
 
         
     
     
-            marker_ed15fc91ba371f8ce453099e100d53d6.bindTooltip(
+            marker_893bb50c95d5481b04be00c55943cc85.bindTooltip(
                 `<div>
                      Jardin des Tuileries
                  </div>`,
@@ -304,17 +311,17 @@
             );
         
     
-                marker_ed15fc91ba371f8ce453099e100d53d6.setIcon(icon_9283677f2a3931da64e978c2111fb68a);
+                marker_893bb50c95d5481b04be00c55943cc85.setIcon(icon_0958d3192b5bf1175568097ff6bb2dfe);
             
     
-            var marker_31ace58e7dbd6d21c3f202a200ec6616 = L.marker(
+            var marker_748bdf5e93d1d28ee5b99a9bf38c0fb2 = L.marker(
                 [48.8556, 2.2986],
                 {
 }
-            ).addTo(feature_group_a19a870f745a50c55a2006aa6f8c3f0c);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_833db752fb34c0facc5b0b6e6250f59c = L.AwesomeMarkers.icon(
+            var icon_1262baa3a5799652ac523a2c574e7ef1 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "purple",
   "iconColor": "white",
@@ -325,24 +332,24 @@
             );
         
     
-        var popup_00e46967bdb46b5c2c6053517acd5771 = L.popup({
+        var popup_8454f9fd3e56b5147cf9346ed2430577 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_cbcbf0882d2412706d7f48e42cdb57b3 = $(`<div id="html_cbcbf0882d2412706d7f48e42cdb57b3" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Champ de Mars</h4>         <b>Type :</b> Espace vert<br>         <b>Latitude :</b> 48.8556<br>         <b>Longitude :</b> 2.2986     </div>     </div>`)[0];
-                popup_00e46967bdb46b5c2c6053517acd5771.setContent(html_cbcbf0882d2412706d7f48e42cdb57b3);
+                var html_2d953e0de7f7165fcee049846df488a0 = $(`<div id="html_2d953e0de7f7165fcee049846df488a0" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Champ de Mars</h4>          <b>Type :</b> Espace vert<br><br>          <b>Latitude :</b> 48.8556<br>          <b>Longitude :</b> 2.2986      </div>     </div>`)[0];
+                popup_8454f9fd3e56b5147cf9346ed2430577.setContent(html_2d953e0de7f7165fcee049846df488a0);
             
         
 
-        marker_31ace58e7dbd6d21c3f202a200ec6616.bindPopup(popup_00e46967bdb46b5c2c6053517acd5771)
+        marker_748bdf5e93d1d28ee5b99a9bf38c0fb2.bindPopup(popup_8454f9fd3e56b5147cf9346ed2430577)
         ;
 
         
     
     
-            marker_31ace58e7dbd6d21c3f202a200ec6616.bindTooltip(
+            marker_748bdf5e93d1d28ee5b99a9bf38c0fb2.bindTooltip(
                 `<div>
                      Champ de Mars
                  </div>`,
@@ -352,17 +359,17 @@
             );
         
     
-                marker_31ace58e7dbd6d21c3f202a200ec6616.setIcon(icon_833db752fb34c0facc5b0b6e6250f59c);
+                marker_748bdf5e93d1d28ee5b99a9bf38c0fb2.setIcon(icon_1262baa3a5799652ac523a2c574e7ef1);
             
     
-            var marker_1796b0e99034a89c3e5f7caf8ef193bb = L.marker(
+            var marker_e09be91f54c601708458fed733fd2a78 = L.marker(
                 [48.8799, 2.3098],
                 {
 }
-            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_7f888edebce37b1de819b79f85a91803 = L.AwesomeMarkers.icon(
+            var icon_f2aee878e3f7b8a6945d481fab52bf6b = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
@@ -373,24 +380,24 @@
             );
         
     
-        var popup_992c656f857d52b6bbb4ef9d0d82a1f0 = L.popup({
+        var popup_d72c2ec9b5ca559c7d792499f9f7a2af = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_8821075e2c14ee3fa5cbc55a2353eedb = $(`<div id="html_8821075e2c14ee3fa5cbc55a2353eedb" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc Monceau</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8799<br>         <b>Longitude :</b> 2.3098     </div>     </div>`)[0];
-                popup_992c656f857d52b6bbb4ef9d0d82a1f0.setContent(html_8821075e2c14ee3fa5cbc55a2353eedb);
+                var html_e84e041149929846b8d2c4f7334c91ed = $(`<div id="html_e84e041149929846b8d2c4f7334c91ed" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Parc Monceau</h4>          <b>Type :</b> Parc<br><br>          <b>Latitude :</b> 48.8799<br>          <b>Longitude :</b> 2.3098      </div>     </div>`)[0];
+                popup_d72c2ec9b5ca559c7d792499f9f7a2af.setContent(html_e84e041149929846b8d2c4f7334c91ed);
             
         
 
-        marker_1796b0e99034a89c3e5f7caf8ef193bb.bindPopup(popup_992c656f857d52b6bbb4ef9d0d82a1f0)
+        marker_e09be91f54c601708458fed733fd2a78.bindPopup(popup_d72c2ec9b5ca559c7d792499f9f7a2af)
         ;
 
         
     
     
-            marker_1796b0e99034a89c3e5f7caf8ef193bb.bindTooltip(
+            marker_e09be91f54c601708458fed733fd2a78.bindTooltip(
                 `<div>
                      Parc Monceau
                  </div>`,
@@ -400,17 +407,17 @@
             );
         
     
-                marker_1796b0e99034a89c3e5f7caf8ef193bb.setIcon(icon_7f888edebce37b1de819b79f85a91803);
+                marker_e09be91f54c601708458fed733fd2a78.setIcon(icon_f2aee878e3f7b8a6945d481fab52bf6b);
             
     
-            var marker_1e74bb0cff45ef140f195ebc74314534 = L.marker(
+            var marker_647986ad8909521950102adeecf8908b = L.marker(
                 [48.8331, 2.433],
                 {
 }
-            ).addTo(feature_group_d28c4d368f9ec5d91271aa182aae641a);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_2e84993c35b454d3cd6dfdfd16237d65 = L.AwesomeMarkers.icon(
+            var icon_b4021224f1cac58349afae83fd856fc2 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -421,24 +428,24 @@
             );
         
     
-        var popup_b17f2d3c60c7e780a307f91ca4cbd344 = L.popup({
+        var popup_6a7f5dd50ef78e1fbb30a00e160c12e9 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_7b7571f5d9271f69fc19f0fffac6589c = $(`<div id="html_7b7571f5d9271f69fc19f0fffac6589c" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Bois de Vincennes</h4>         <b>Type :</b> Bois<br>         <b>Latitude :</b> 48.8331<br>         <b>Longitude :</b> 2.433     </div>     </div>`)[0];
-                popup_b17f2d3c60c7e780a307f91ca4cbd344.setContent(html_7b7571f5d9271f69fc19f0fffac6589c);
+                var html_8e21f698fb9c2d1ef42c0245566b41bb = $(`<div id="html_8e21f698fb9c2d1ef42c0245566b41bb" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Bois de Vincennes</h4>          <b>Type :</b> Bois<br><br>          <b>Latitude :</b> 48.8331<br>          <b>Longitude :</b> 2.433      </div>     </div>`)[0];
+                popup_6a7f5dd50ef78e1fbb30a00e160c12e9.setContent(html_8e21f698fb9c2d1ef42c0245566b41bb);
             
         
 
-        marker_1e74bb0cff45ef140f195ebc74314534.bindPopup(popup_b17f2d3c60c7e780a307f91ca4cbd344)
+        marker_647986ad8909521950102adeecf8908b.bindPopup(popup_6a7f5dd50ef78e1fbb30a00e160c12e9)
         ;
 
         
     
     
-            marker_1e74bb0cff45ef140f195ebc74314534.bindTooltip(
+            marker_647986ad8909521950102adeecf8908b.bindTooltip(
                 `<div>
                      Bois de Vincennes
                  </div>`,
@@ -448,17 +455,17 @@
             );
         
     
-                marker_1e74bb0cff45ef140f195ebc74314534.setIcon(icon_2e84993c35b454d3cd6dfdfd16237d65);
+                marker_647986ad8909521950102adeecf8908b.setIcon(icon_b4021224f1cac58349afae83fd856fc2);
             
     
-            var marker_034923ddddae211d215dc41459bc701f = L.marker(
+            var marker_fa9d416ce5e89469d70271ee287e6e85 = L.marker(
                 [48.8637, 2.253],
                 {
 }
-            ).addTo(feature_group_d28c4d368f9ec5d91271aa182aae641a);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_257b7263af4b843ddd61916ecb76fc82 = L.AwesomeMarkers.icon(
+            var icon_97faf80d3cf1ece08e60f960d7d98daf = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -469,24 +476,24 @@
             );
         
     
-        var popup_f14cc04c8759b6f54697c1639c4a3b01 = L.popup({
+        var popup_f06cbdcea9c4807629ea0681b94a568d = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_70d2736305fc41163c91ca3cfcfbe0b3 = $(`<div id="html_70d2736305fc41163c91ca3cfcfbe0b3" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Bois de Boulogne</h4>         <b>Type :</b> Bois<br>         <b>Latitude :</b> 48.8637<br>         <b>Longitude :</b> 2.253     </div>     </div>`)[0];
-                popup_f14cc04c8759b6f54697c1639c4a3b01.setContent(html_70d2736305fc41163c91ca3cfcfbe0b3);
+                var html_00e4d65413602511b145b96d1d931157 = $(`<div id="html_00e4d65413602511b145b96d1d931157" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Bois de Boulogne</h4>          <b>Type :</b> Bois<br><br>          <b>Latitude :</b> 48.8637<br>          <b>Longitude :</b> 2.253      </div>     </div>`)[0];
+                popup_f06cbdcea9c4807629ea0681b94a568d.setContent(html_00e4d65413602511b145b96d1d931157);
             
         
 
-        marker_034923ddddae211d215dc41459bc701f.bindPopup(popup_f14cc04c8759b6f54697c1639c4a3b01)
+        marker_fa9d416ce5e89469d70271ee287e6e85.bindPopup(popup_f06cbdcea9c4807629ea0681b94a568d)
         ;
 
         
     
     
-            marker_034923ddddae211d215dc41459bc701f.bindTooltip(
+            marker_fa9d416ce5e89469d70271ee287e6e85.bindTooltip(
                 `<div>
                      Bois de Boulogne
                  </div>`,
@@ -496,17 +503,17 @@
             );
         
     
-                marker_034923ddddae211d215dc41459bc701f.setIcon(icon_257b7263af4b843ddd61916ecb76fc82);
+                marker_fa9d416ce5e89469d70271ee287e6e85.setIcon(icon_97faf80d3cf1ece08e60f960d7d98daf);
             
     
-            var marker_f606c3c883b55112ae521ca01233d027 = L.marker(
+            var marker_1a4237539ec6bfafc229e8c33bde1864 = L.marker(
                 [48.8937, 2.3937],
                 {
 }
-            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_25ea0ec91fa6d2b20cf097bf752aa9e7 = L.AwesomeMarkers.icon(
+            var icon_05e03fdb52b4c02f4a4249f2c830f3ee = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
@@ -517,24 +524,24 @@
             );
         
     
-        var popup_e47f511b5ee2ff5d481a63b1b5ed4018 = L.popup({
+        var popup_dc3c288ad1ced77a43decaa118674dd9 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2296bd95662044778bda54fae8f34600 = $(`<div id="html_2296bd95662044778bda54fae8f34600" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc de la Villette</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8937<br>         <b>Longitude :</b> 2.3937     </div>     </div>`)[0];
-                popup_e47f511b5ee2ff5d481a63b1b5ed4018.setContent(html_2296bd95662044778bda54fae8f34600);
+                var html_01a5ad38a9b61242f57edfd6605dd1b9 = $(`<div id="html_01a5ad38a9b61242f57edfd6605dd1b9" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Parc de la Villette</h4>          <b>Type :</b> Parc<br><br>          <b>Latitude :</b> 48.8937<br>          <b>Longitude :</b> 2.3937      </div>     </div>`)[0];
+                popup_dc3c288ad1ced77a43decaa118674dd9.setContent(html_01a5ad38a9b61242f57edfd6605dd1b9);
             
         
 
-        marker_f606c3c883b55112ae521ca01233d027.bindPopup(popup_e47f511b5ee2ff5d481a63b1b5ed4018)
+        marker_1a4237539ec6bfafc229e8c33bde1864.bindPopup(popup_dc3c288ad1ced77a43decaa118674dd9)
         ;
 
         
     
     
-            marker_f606c3c883b55112ae521ca01233d027.bindTooltip(
+            marker_1a4237539ec6bfafc229e8c33bde1864.bindTooltip(
                 `<div>
                      Parc de la Villette
                  </div>`,
@@ -544,17 +551,17 @@
             );
         
     
-                marker_f606c3c883b55112ae521ca01233d027.setIcon(icon_25ea0ec91fa6d2b20cf097bf752aa9e7);
+                marker_1a4237539ec6bfafc229e8c33bde1864.setIcon(icon_05e03fdb52b4c02f4a4249f2c830f3ee);
             
     
-            var marker_72b5023b20ea37b49b9824f5a5ad8560 = L.marker(
+            var marker_277ba29112e29b8aa8ce43a9d1e9bfc2 = L.marker(
                 [48.8214, 2.3389],
                 {
 }
-            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_788f6753ca7e0ee37df0d322ea401a69 = L.AwesomeMarkers.icon(
+            var icon_7e0308ede5fc9e8c839db3e9e5cf0ceb = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
@@ -565,24 +572,24 @@
             );
         
     
-        var popup_fb7eee87942217acf7b3c695f4c5d8b0 = L.popup({
+        var popup_4b734afc103822a7c54433a6e374908c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_15087f9e577b47a33e2a5e20fc9cb423 = $(`<div id="html_15087f9e577b47a33e2a5e20fc9cb423" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc Montsouris</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8214<br>         <b>Longitude :</b> 2.3389     </div>     </div>`)[0];
-                popup_fb7eee87942217acf7b3c695f4c5d8b0.setContent(html_15087f9e577b47a33e2a5e20fc9cb423);
+                var html_ec2e407c7dd55b2866f7743c8a16b03a = $(`<div id="html_ec2e407c7dd55b2866f7743c8a16b03a" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Parc Montsouris</h4>          <b>Type :</b> Parc<br><br>          <b>Latitude :</b> 48.8214<br>          <b>Longitude :</b> 2.3389      </div>     </div>`)[0];
+                popup_4b734afc103822a7c54433a6e374908c.setContent(html_ec2e407c7dd55b2866f7743c8a16b03a);
             
         
 
-        marker_72b5023b20ea37b49b9824f5a5ad8560.bindPopup(popup_fb7eee87942217acf7b3c695f4c5d8b0)
+        marker_277ba29112e29b8aa8ce43a9d1e9bfc2.bindPopup(popup_4b734afc103822a7c54433a6e374908c)
         ;
 
         
     
     
-            marker_72b5023b20ea37b49b9824f5a5ad8560.bindTooltip(
+            marker_277ba29112e29b8aa8ce43a9d1e9bfc2.bindTooltip(
                 `<div>
                      Parc Montsouris
                  </div>`,
@@ -592,17 +599,17 @@
             );
         
     
-                marker_72b5023b20ea37b49b9824f5a5ad8560.setIcon(icon_788f6753ca7e0ee37df0d322ea401a69);
+                marker_277ba29112e29b8aa8ce43a9d1e9bfc2.setIcon(icon_7e0308ede5fc9e8c839db3e9e5cf0ceb);
             
     
-            var marker_3c61d892365077595604dde5173b5f15 = L.marker(
+            var marker_6632d96c9d44c21823b186849131b6bf = L.marker(
                 [48.8414, 2.2759],
                 {
 }
-            ).addTo(feature_group_3487881207179927f740b9f9758ca9ea);
+            ).addTo(marker_cluster_ef002cc352bd664a3aadad29ace0632a);
         
     
-            var icon_f4eb075f197be9b943aa3b340c98c0dd = L.AwesomeMarkers.icon(
+            var icon_03ecdbce7bef59b63fcde31eba458f0f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
@@ -613,24 +620,24 @@
             );
         
     
-        var popup_136bbc958d5252a9c4cf7bf396f5c1d6 = L.popup({
+        var popup_01af2cc820d0d9e52fd9d8c6c8b3bdda = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_cc19cb8c7e3ea7dde4560f2dee69f5ad = $(`<div id="html_cc19cb8c7e3ea7dde4560f2dee69f5ad" style="width: 100.0%; height: 100.0%;">     <div style="width:220px">         <h4>Parc André-Citroën</h4>         <b>Type :</b> Parc<br>         <b>Latitude :</b> 48.8414<br>         <b>Longitude :</b> 2.2759     </div>     </div>`)[0];
-                popup_136bbc958d5252a9c4cf7bf396f5c1d6.setContent(html_cc19cb8c7e3ea7dde4560f2dee69f5ad);
+                var html_0654f7e21fd142b8ecf27998c45b5bc7 = $(`<div id="html_0654f7e21fd142b8ecf27998c45b5bc7" style="width: 100.0%; height: 100.0%;">     <div style="width:230px">          <h4>Parc André-Citroën</h4>          <b>Type :</b> Parc<br><br>          <b>Latitude :</b> 48.8414<br>          <b>Longitude :</b> 2.2759      </div>     </div>`)[0];
+                popup_01af2cc820d0d9e52fd9d8c6c8b3bdda.setContent(html_0654f7e21fd142b8ecf27998c45b5bc7);
             
         
 
-        marker_3c61d892365077595604dde5173b5f15.bindPopup(popup_136bbc958d5252a9c4cf7bf396f5c1d6)
+        marker_6632d96c9d44c21823b186849131b6bf.bindPopup(popup_01af2cc820d0d9e52fd9d8c6c8b3bdda)
         ;
 
         
     
     
-            marker_3c61d892365077595604dde5173b5f15.bindTooltip(
+            marker_6632d96c9d44c21823b186849131b6bf.bindTooltip(
                 `<div>
                      Parc André-Citroën
                  </div>`,
@@ -640,130 +647,69 @@
             );
         
     
-                marker_3c61d892365077595604dde5173b5f15.setIcon(icon_f4eb075f197be9b943aa3b340c98c0dd);
+                marker_6632d96c9d44c21823b186849131b6bf.setIcon(icon_03ecdbce7bef59b63fcde31eba458f0f);
             
     
-            marker_cluster_74605efaa8f3927078dd3f94daca1bd2.addTo(map_5c030670c538e2317afcb72f05844bec);
+            marker_cluster_ef002cc352bd664a3aadad29ace0632a.addTo(map_f483799c4d6decc9d1b053a23d42e3f7);
         
     
-            var feature_group_3487881207179927f740b9f9758ca9ea = L.featureGroup(
+            var feature_group_816a7d0b2296e721f8a68bb46118275c = L.featureGroup(
                 {
 }
             );
         
     
-                marker_c93b1c2bdc91993b9f2b9bcdfa846b19.setIcon(icon_ed8e38edf018e9c0bc78e7c7148d21ed);
-            
-    
-                marker_1796b0e99034a89c3e5f7caf8ef193bb.setIcon(icon_7f888edebce37b1de819b79f85a91803);
-            
-    
-                marker_f606c3c883b55112ae521ca01233d027.setIcon(icon_25ea0ec91fa6d2b20cf097bf752aa9e7);
-            
-    
-                marker_72b5023b20ea37b49b9824f5a5ad8560.setIcon(icon_788f6753ca7e0ee37df0d322ea401a69);
-            
-    
-                marker_3c61d892365077595604dde5173b5f15.setIcon(icon_f4eb075f197be9b943aa3b340c98c0dd);
-            
-    
-            feature_group_3487881207179927f740b9f9758ca9ea.addTo(map_5c030670c538e2317afcb72f05844bec);
+            feature_group_816a7d0b2296e721f8a68bb46118275c.addTo(map_f483799c4d6decc9d1b053a23d42e3f7);
         
     
-            var feature_group_0e0528f6c2aae9544afdd8843d8699d9 = L.featureGroup(
+            var feature_group_aac780c5a8cf5b2a00efb7754a5efe5c = L.featureGroup(
                 {
 }
             );
         
     
-                marker_14a04ba476d514b12090de9994e3e810.setIcon(icon_02b02cd5a8c17dfcc101e5a8cab6b732);
-            
-    
-                marker_ed15fc91ba371f8ce453099e100d53d6.setIcon(icon_9283677f2a3931da64e978c2111fb68a);
-            
-    
-            feature_group_0e0528f6c2aae9544afdd8843d8699d9.addTo(map_5c030670c538e2317afcb72f05844bec);
+            feature_group_aac780c5a8cf5b2a00efb7754a5efe5c.addTo(map_f483799c4d6decc9d1b053a23d42e3f7);
         
     
-            var feature_group_d28c4d368f9ec5d91271aa182aae641a = L.featureGroup(
+            var feature_group_e1934ee8fc968ea6d286fc4924884c32 = L.featureGroup(
                 {
 }
             );
         
     
-                marker_1e74bb0cff45ef140f195ebc74314534.setIcon(icon_2e84993c35b454d3cd6dfdfd16237d65);
-            
-    
-                marker_034923ddddae211d215dc41459bc701f.setIcon(icon_257b7263af4b843ddd61916ecb76fc82);
-            
-    
-            feature_group_d28c4d368f9ec5d91271aa182aae641a.addTo(map_5c030670c538e2317afcb72f05844bec);
+            feature_group_e1934ee8fc968ea6d286fc4924884c32.addTo(map_f483799c4d6decc9d1b053a23d42e3f7);
         
     
-            var feature_group_a19a870f745a50c55a2006aa6f8c3f0c = L.featureGroup(
+            var feature_group_4798fdf28400ed711e92c543d84542c5 = L.featureGroup(
                 {
 }
             );
         
     
-                marker_31ace58e7dbd6d21c3f202a200ec6616.setIcon(icon_833db752fb34c0facc5b0b6e6250f59c);
-            
-    
-            feature_group_a19a870f745a50c55a2006aa6f8c3f0c.addTo(map_5c030670c538e2317afcb72f05844bec);
+            feature_group_4798fdf28400ed711e92c543d84542c5.addTo(map_f483799c4d6decc9d1b053a23d42e3f7);
         
     
-            var marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl = new L.Control.Search({
-                layer: marker_cluster_74605efaa8f3927078dd3f94daca1bd2,
-                
-                propertyName: 'nom',
-                
-                collapsed: false,
-                textPlaceholder: '🔎 Rechercher un espace vert...',
-                position:'topleft',
-            
-                initial: false,
-                
-                hideMarkerOnCollapse: true
-            
-                });
-                marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl.on('search:locationfound', function(e) {
-                    marker_cluster_74605efaa8f3927078dd3f94daca1bd2.setStyle(function(feature){
-                        return feature.properties.style
-                    })
-                    
-                    if(e.layer._popup)
-                        e.layer.openPopup();
-                })
-                marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl.on('search:collapsed', function(e) {
-                        marker_cluster_74605efaa8f3927078dd3f94daca1bd2.setStyle(function(feature){
-                            return feature.properties.style
-                    });
-                });
-            map_5c030670c538e2317afcb72f05844bec.addControl( marker_cluster_74605efaa8f3927078dd3f94daca1bd2searchControl );
-
-        
-    
-            var layer_control_9107eb745a1313c34f97961323efce03_layers = {
+            var layer_control_3c227f222a77c86a74578daad2835b20_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_292947731810cf1ad1413b2990826ba0,
+                    "openstreetmap" : tile_layer_0f6ffbf7d84067dad2f0dcec50a9b197,
                 },
                 overlays :  {
-                    "macro_element_74605efaa8f3927078dd3f94daca1bd2" : marker_cluster_74605efaa8f3927078dd3f94daca1bd2,
-                    "\ud83c\udf33 Parcs" : feature_group_3487881207179927f740b9f9758ca9ea,
-                    "\ud83c\udf37 Jardins" : feature_group_0e0528f6c2aae9544afdd8843d8699d9,
-                    "\ud83c\udf32 Bois" : feature_group_d28c4d368f9ec5d91271aa182aae641a,
-                    "\ud83c\udf3f Autres espaces verts" : feature_group_a19a870f745a50c55a2006aa6f8c3f0c,
+                    "\ud83d\udccd Espaces verts" : marker_cluster_ef002cc352bd664a3aadad29ace0632a,
+                    "\ud83c\udf33 Parcs" : feature_group_816a7d0b2296e721f8a68bb46118275c,
+                    "\ud83c\udf37 Jardins" : feature_group_aac780c5a8cf5b2a00efb7754a5efe5c,
+                    "\ud83c\udf32 Bois" : feature_group_e1934ee8fc968ea6d286fc4924884c32,
+                    "\ud83c\udf3f Autres espaces verts" : feature_group_4798fdf28400ed711e92c543d84542c5,
                 },
             };
-            let layer_control_9107eb745a1313c34f97961323efce03 = L.control.layers(
-                layer_control_9107eb745a1313c34f97961323efce03_layers.base_layers,
-                layer_control_9107eb745a1313c34f97961323efce03_layers.overlays,
+            let layer_control_3c227f222a77c86a74578daad2835b20 = L.control.layers(
+                layer_control_3c227f222a77c86a74578daad2835b20_layers.base_layers,
+                layer_control_3c227f222a77c86a74578daad2835b20_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_5c030670c538e2317afcb72f05844bec);
+            ).addTo(map_f483799c4d6decc9d1b053a23d42e3f7);
 
         
 </script>
